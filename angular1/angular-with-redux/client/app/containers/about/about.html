@@ -1,0 +1,14 @@
+<div class="container">
+  <a style="float: right" ng-click="$ctrl.redirectToHome()">Go to Home</a>
+  <div class="row">
+    <div class="col-md-12">
+      <p>{{$ctrl.content}}</p>
+    </div>
+    <div class="col-md-12">
+      <p>
+        Accessing todo items added from <a ng-click="$ctrl.redirectToHome()">Home</a> page <br/>
+        {{$ctrl.todos}}
+      </p>
+    </div>
+  </div>
+</div>
