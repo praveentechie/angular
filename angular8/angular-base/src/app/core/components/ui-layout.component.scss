@@ -1,0 +1,14 @@
+.app-container {
+  color: #000000;
+  height: 100vh;
+  box-sizing: border-box;
+
+  .app-navbar {
+    background-color: #e3f2fd !important;
+
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
