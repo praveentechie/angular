@@ -5,12 +5,11 @@ import { SubHomeComponent } from './sub-home.component';
 
 let homeRoutes: Routes = [
   {
-    path: 'home',
-    component: HomeComponent,
-    children: [{
-      path: 'sub',
-      component: SubHomeComponent
-    }]
+    path: '',
+    component: HomeComponent
+  }, {
+    path: 'sub',
+    component: SubHomeComponent
   }
 ];
 
