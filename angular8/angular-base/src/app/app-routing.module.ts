@@ -10,12 +10,14 @@ const routes: Routes = [
   },
   {
     path: 'home',
+    // ### angular router: lazily loading a module, the modules routes has to be declared in the module else will get 404
     loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
   },
   {
     path: 'help',
     loadChildren: () => import('./about/about.module').then(m => m.AboutModule)
   }, {
+    // ### angular router: fallback 404 config
     path: '**',
     component: NotFoundComponent
   }

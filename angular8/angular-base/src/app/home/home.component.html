@@ -1,3 +1,22 @@
-<h2>Welcome to the angular demo app</h2>
-<!-- <router-outlet></router-outlet> -->
-<a routerLink="/home/sub" >Sub page</a>
+<h2>Welcome to the Components tutorial</h2>
+<div class="float-right">
+  <a routerLink="/home/sub" >Sub page</a>
+</div>
+<section class="method-in-template">
+  <h3>Using instance method in template</h3>
+  <p>
+    it's problems 
+    <span title="The methods will gets called every time a page re-render happens EVEN WHEN THE VALUE IS NOT CHANGED">😔</span>
+    and solutions
+    <span title="Use angular Pipe">😇</span>
+    <span *ngIf="false">teststs</span>
+  </p>
+  <p style="color: red;">{{stringHelper.toUpperCase("invoked instance method")}}</p>
+  <p style="color: red;">{{convertToUpperCase("invoked class method")}}</p>
+  <!-- ### angular pipe: passing multiple agruments to the pipe -->
+  <p style="color: green;">{{stringValue | toUpperCase : stringHelper.toUpperCase}}("will not be called more than once unless pipe values changes")</p>
+  <button (click)="handleClick()">Clear console & click me</button>
+  <button (click)="toggleStringValue()">Toggle value for pipe</button>
+  <note-decorator [displayText]="'To calculate values in a component don\'t use function use PIPE instead. If PIPE is used the value will not be re-rendered every time only when the value changes'" [displayInline]="false"></note-decorator>
+  <hr/>
+</section>

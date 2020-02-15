@@ -2,16 +2,18 @@ import { NgModule } from "@angular/core";
 import { HomeComponent } from "./home.component";
 import { HomeRouterModule } from './home-router.module';
 import { SubHomeComponent } from './sub-home.component';
-import { CommonModule } from '@angular/common';
+import { UpperCasePipe } from './pipes/home.pipe';
+import { CoreModule } from '../core/core.module';
 
 @NgModule({
   imports: [
-    CommonModule,
+    CoreModule,
     HomeRouterModule
   ],
   declarations: [
     HomeComponent,
-    SubHomeComponent
+    SubHomeComponent,
+    UpperCasePipe
   ]
 })
 export class HomeModule {}
