@@ -2,12 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AboutModule } from './about/about.module';
+// import { AboutModule } from './about/about.module';
 
 import { AppComponent } from './app.component';
 import { NotFoundComponent } from './core/components/not-found.component';
 import { UILayout } from './core/components/ui-layout.component';
-import { HomeModule } from './home/home.module';
+// import { HomeModule } from './home/home.module';
 
 @NgModule({
   // ### angular - module
@@ -21,8 +21,8 @@ import { HomeModule } from './home/home.module';
   ], //The subset of declarations that should be visible and usable in the component templates of other NgModules.
   imports: [ //Other modules whose exported classes are needed by component templates declared in this NgModule.
     BrowserModule,
-    AboutModule,
-    HomeModule,
+    // AboutModule,
+    // HomeModule,
     AppRoutingModule // ### angular router - add routing module to the last if not the child rules will not be included and it falls back to 404 url
   ],
   providers: [], //Creators of services that this NgModule contributes to the global collection of services; they become accessible in all parts of the app
