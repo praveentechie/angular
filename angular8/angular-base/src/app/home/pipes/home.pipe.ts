@@ -7,3 +7,11 @@ export class UpperCasePipe implements PipeTransform {
     return helperFunction(value);
   }
 }
+
+@Pipe({name: 'trimValue'})
+export class TrimValuePipe implements PipeTransform {
+  transform(value: String): String {
+    console.log('trimming pipe value');
+    return (value || '').trim();
+  }
+}

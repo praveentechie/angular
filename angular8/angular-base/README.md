@@ -1,5 +1,8 @@
 # Angular
 
+## TsConfig
+* Reduce import path by declaring `paths` in `tsconfig.json`. Look for the example `@apcore` in `tsconfig.json`
+
 ## Components
 * Angular cannot predict whether the return value of function() in template has changed, it needs to execute the function every time change detection runs.
 
