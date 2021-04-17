@@ -1,0 +1,34 @@
+// ### angular replace=true workaround. 
+// :host is used to add styles to the wrapper element
+:host {
+  border: 1px solid #333333;
+  display: flex;
+  justify-items: center;
+  margin: 5px;
+  height: 150px;
+  width: 15%;
+}
+.card-container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+
+  &.hidden {
+    cursor: pointer;
+  }
+
+  &.matched {
+    background: linear-gradient(45deg, #339933, transparent);
+  }
+
+  &.visible {
+    background: linear-gradient(45deg, #ffff00, transparent);
+  }
+
+  .card-value {
+    align-self: center;
+    text-align: center;
+    font-size: 1.5em;
+    width: 100%;
+  }
+}

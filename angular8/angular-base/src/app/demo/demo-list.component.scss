@@ -1,0 +1,33 @@
+@import '../core/styles/core.scss';
+
+.demo-list { 
+  .demo-item-container {
+    display: flex;
+    flex-wrap: wrap;
+
+    .demo-item-link {
+      border: 1px solid $border-color;
+      padding: 10px 0;
+      margin: 5px;
+      height: 50px;
+      text-align: center;
+      width: calc(25% - 10px);
+    }  
+  }
+
+  @media screen and (max-width: $laptop_min_size) {
+    .demo-item-container {
+      .demo-item-link {
+        width: calc(33% - 10px);
+      }  
+    }
+  }
+
+  @media screen and (max-width: $tablet_min_size) {
+    .demo-item-container {
+      .demo-item-link {
+        width: calc(50% - 10px);
+      }  
+    }
+  }
+}

@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="float-right">
+    <a routerLink="/fundamentals">< Back</a>
+  </div>
+  <h3>All about components</h3>
+  <section class="method-in-template">
+    <note-decorator [displayText]="componentDefinition" [displayInline]="false"></note-decorator>
+    <h4>1. Using instance method in template - Pipes</h4>
+    <p>
+      it's problems 
+      <span title="The methods will gets called every time a page re-render happens EVEN WHEN THE VALUE IS NOT CHANGED">😔</span>
+      and solutions
+      <span title="Use angular Pipe">😇</span>
+      <span *ngIf="false">teststs</span>
+    </p>
+    <p style="color: red;">{{stringHelper.toUpperCase("invoked instance method")}}</p>
+    <p style="color: red;">{{convertToUpperCase("invoked class method")}}</p>
+    <!-- ### angular pipe: passing multiple agruments to the pipe -->
+    <!-- ### angular pipe: pipes chaining -->
+    <p style="color: green;">{{stringValue | toUpperCase : stringHelper.toUpperCase | trimValue}}("will not be called more than once unless pipe values changes")</p>
+    <button (click)="handleClick()">Clear console & click me</button>
+    <button (click)="toggleStringValue()">Toggle value for pipe</button>
+    <note-decorator [displayText]="'To calculate values in a component don\'t use function use PIPE instead. If PIPE is used the value will not be re-rendered every time only when the value changes'" [displayInline]="false"></note-decorator>
+    <note-decorator [displayText]="'A class with the @Pipe decorator defines a function that transforms input values to output values for display in a view.'"></note-decorator>
+    <hr/>
+  </section>
+  <section>
+    <h4>2. Looping element - *ngFor</h4>
+    <ul>
+      <li *ngFor="let hero of heroList">
+        {{hero}}
+      </li>
+    </ul>
+    <note-decorator [displayText]="'Loop similar to \'for of\' in JS.'" [displayInline]="false"></note-decorator>
+    <hr/>
+  </section>
+  <section>
+    <h4>3. Conditional statement - if & else</h4>
+    <i *ngIf="heroList.length">{{heroList[0]}} - rendered if</i>
+    <br/>
+    <i *ngIf="heroList.length !== 2; else elseBlock">{{heroList[0]}} - rendered if</i>
+    <ng-template #elseBlock><i>{{heroList[1]}} - rendered else block</i></ng-template>
+    <note-decorator [displayText]="' *ngIf=`condition; else elseBlock`. Use ng-template to render else block with id'" [displayInline]="false"></note-decorator>
+    <hr/>
+  </section>
+</div>

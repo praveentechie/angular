@@ -1,4 +1,45 @@
-.method-in-template {
-  margin: auto 15px;
-  width: 100%;
+.parallax {
+  /* The image used */
+  background-image: url("/assets/wolverine.jpg");
+
+  /* Set a specific height */
+  height: 500px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.7;
+}
+
+.content-one,
+.content-two {
+  height: 500px;
+}
+
+// spinner 1
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loader {
+  display: block;
+  height: 120px;
+  width: 120px;
+  border: 15px solid #f3f3f3;
+  border-top: 15px solid #3498db;
+  border-radius: 50%;
+  animation: spin 2s ease infinite;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%
+}
+
+.sticky + .parallax {
+  padding-top: 102px;
 }

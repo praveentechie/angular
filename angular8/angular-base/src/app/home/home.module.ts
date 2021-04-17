@@ -1,10 +1,7 @@
 import { NgModule } from "@angular/core";
 import { HomeComponent } from "./home.component";
-import { HomeRouterModule } from './home-router.module';
-import { SubHomeComponent } from './sub-home.component';
-import * as HomePipes from './pipes/home.pipe';
+import { HomeRouterModule } from './home-routing.module';
 import { CoreModule } from '@apcore/core.module';
-// ### angular tsconfig: add shortcut for folder name
 
 @NgModule({
   imports: [
@@ -12,10 +9,7 @@ import { CoreModule } from '@apcore/core.module';
     HomeRouterModule
   ],
   declarations: [
-    HomeComponent,
-    SubHomeComponent,
-    // ### angular declare multiple components
-    ...Object.values(HomePipes)
+    HomeComponent
   ]
 })
 export class HomeModule {}

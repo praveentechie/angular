@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="float-right">
+    <a routerLink="/fundamentals">< Back</a>
+  </div>
+  <h3>All about Modules</h3>
+  <section>
+    <ul>
+      <li>
+        Every Angular app has at least one NgModule class, the root module, which is conventionally named AppModule and resides in a file named <pre>app.module.ts</pre>
+      </li>
+      <li>
+        The root NgModule for an app is so named because it can include child NgModules in a hierarchy of any depth.
+      </li>
+      <ul>
+        <h4>NgModule metadata</h4>
+        <li>
+          <b>declarations:</b> The components, directives, and pipes that belong to this NgModule.
+        </li>
+        <li>
+          <b>exports:</b> The subset of declarations that should be visible and usable in the component templates of other NgModules.
+        </li>
+        <li>
+          <b>imports:</b> Other modules whose exported classes are needed by component templates declared in this NgModule.
+        </li>
+        <li>
+          <b>providers:</b> Creators of services that this NgModule <u><i>contributes to the global collection of services;</i></u> they become accessible in all parts of the app. (You can also specify providers at the component level, which is often preferred.)
+        </li>
+        <li>
+          <b>bootstrap:</b> The main application view, called the <i>root component</i>, which hosts all other app views. <u><i>Only the root NgModule should set the bootstrap property.</i></u>
+        </li>
+      </ul>
+    </ul>
+  </section>
+</div>

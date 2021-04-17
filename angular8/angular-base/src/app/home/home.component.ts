@@ -1,5 +1,4 @@
 import { Component } from "@angular/core";
-import { StringHelperService } from '../core/helpers/string-helper.service';
 
 @Component({
   templateUrl: './home.component.html',
@@ -8,24 +7,25 @@ import { StringHelperService } from '../core/helpers/string-helper.service';
   ]
 })
 export class HomeComponent {
-  stringHelper: StringHelperService;
-  stringValue: String;
-  
-  constructor(stringHelper: StringHelperService) {
-    this.stringHelper = stringHelper;
-    this.stringValue = '';
+  constructor () {
+    window.onscroll = () => {
+      console.log('this', this);
+      this.myFunction();
+    };
   }
 
-  convertToUpperCase(text: String): String {
-    console.log('class method used in template is called');
-    return this.stringHelper.toUpperCase(text);
-  }
+  myFunction() {
+  // Get the header
+  var header = document.getElementById("pageHeader");
 
-  handleClick() {
-    console.log('clicked event fired');
-  }
+  // Get the offset position of the navbar
+  var sticky = header.offsetTop;
 
-  toggleStringValue() {
-    this.stringValue = this.stringValue ? '' : 'ap';
+  // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+    if (window.pageYOffset > sticky) {
+      header.classList.add("sticky");
+    } else {
+      header.classList.remove("sticky");
+    }
   }
 }
