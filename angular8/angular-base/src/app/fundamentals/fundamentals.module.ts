@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 // ### angular tsconfig: add shortcut for folder
 import { CoreModule } from '@apcore/core.module';
-import * as AgPipes from './pipes/fundamentals.pipe';
+import { TrimValuePipe, UpperCasePipe } from './pipes/fundamentals.pipe';
 import { FundamentalsRouterModule } from './fundamentals-routing.module';
 import { FundamentalsPage } from './fundamentals.component';
 import { AgComponent } from './components/ag-component.component';
@@ -17,7 +17,9 @@ import { ModulesComponent } from './components/modules.component';
     AgComponent,
     ModulesComponent,
     // ### angular declare multiple components
-    ...Object.values(AgPipes)
+    // TODO: not working in prod build ...Object.values(AgPipes)
+    TrimValuePipe,
+    UpperCasePipe
   ]
 })
 export class FundamentalsModule{}

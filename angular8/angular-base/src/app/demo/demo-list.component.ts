@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { demoItems as constItems } from './demo-list.const';
+import DemoListConst from './demo-list.const';
 import { DemoItem } from "./card-game/model/DemoItem";
 
 @Component({
@@ -12,7 +12,7 @@ export class DemoList implements OnInit {
   demoItems: Array<DemoItem>;
 
   ngOnInit(): void {
-    this.demoItems = constItems;
+    this.demoItems = DemoListConst.getItems();
   }
 
   public getDemoItems() : Array<DemoItem> {
