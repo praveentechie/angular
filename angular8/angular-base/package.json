@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "deploy": "ng deploy",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -46,7 +47,7 @@
     "tslint": "~5.15.0",
     "typescript": "~3.5.3"
   },
-  "engine": {
+  "engines": {
     "node": ">=12.14.1"
   }
 }
