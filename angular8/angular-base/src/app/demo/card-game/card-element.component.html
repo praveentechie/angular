@@ -1,3 +1,3 @@
 <div class="card-container" [ngClass]="{'matched': card.matched, 'visible': !card.matched && card.visible, 'hidden': !card.visible}" (click)="card.visible ? null : toggleVisible(card.id, true)">
-  <span class="card-value">{{card.visible ? card.value : '?'}}({{card.id}})</span>
+  <span class="card-value">{{card.visible ? card.value : '?'}}</span>
 </div>

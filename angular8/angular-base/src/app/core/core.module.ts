@@ -2,7 +2,9 @@ import { NgModule } from "@angular/core";
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+
 import { NoteDecorator } from './components/note.component';
+import ToastNotification from "./components/toast/toast.component";
 
 @NgModule({
   imports: [
@@ -19,10 +21,12 @@ import { NoteDecorator } from './components/note.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    NoteDecorator
+    NoteDecorator,
+    ToastNotification
   ],
   declarations: [
-    NoteDecorator
+    NoteDecorator,
+    ToastNotification
   ]
 })
 export class CoreModule {}

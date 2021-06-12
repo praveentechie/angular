@@ -1,7 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+@import './app/core/styles/core.scss';
+
 * {
   box-sizing: border-box;
 }
+
 body {
   margin: 0;
 
@@ -10,4 +14,16 @@ body {
     margin: 0 auto;
     margin-top: 150px;
   }
+
+  // common styles
+
+  // ========== FORM START ==========
+  .ng-form {
+    .action-bar {
+      border-top: 1px solid $border-color;
+      margin-top: 15px;
+      padding: 15px 0;
+    }
+  }
+  // ========== FORM END ==========
 }

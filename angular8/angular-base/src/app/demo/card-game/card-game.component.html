@@ -1,14 +1,18 @@
-<section>
-  <h3>Card-Memory game</h3>
-  <i>Number of failed attempts: {{failedAttempts}}</i>
-  <div style="float: right;">
-    <select [(ngModel)]="difficultyLevel" (change)="changeDifficultyLevel($event)">
-      <option value="8">Easy</option>
-      <option value="12">Medium</option>
-      <option value="24">Hard</option>
-    </select>
+<section class="card-game">
+  <h3>Memory match card game</h3>
+  <div class="setting-panel">
+    <i>Number of attempts: {{failedAttempts}}</i>
+    <div class="settings-container">
+      <button class="btn btn-primary" (click)="initCards()">Reset</button>&nbsp;
+      <label>Difficulty: &nbsp;</label>
+      <select [(ngModel)]="difficultyLevel" (change)="changeDifficultyLevel($event)">
+        <option value="8">Easy</option>
+        <option value="12">Medium</option>
+        <option value="20">Hard</option>
+      </select>
+    </div>  
   </div>
-  <div style="display: flex; width: 100%; flex-wrap: wrap;">
+  <div class="game-container">
     <div cardElement *ngFor="let card of cardList" [card]="card" [toggleVisible]="toggleVisible"></div>
   </div>
 </section>

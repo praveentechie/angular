@@ -1,12 +1,22 @@
-<div class="">
-  <h3 class="header" id="pageHeader">Angular 8 complete tutorial</h3>
-  <div class="parallax"></div>
+<div class="home-page">
+  <h3 class="header" id="pageHeader">Learn Angular 8</h3>
+  <div class="parallax">
+    <span class='details concepts'><a routerLink="/fundamentals">Angular Concepts</a></span>
+    <span class='details demo'><a routerLink="/demo">Demos</a></span>
+    <span class='details about'><a routerLink="/help">Angular library</a></span>
+  </div>
   <span class="loader"></span>
-  <div class="content-one" (click)="loginUser()">
-    The first container is present here
+  <div class="content-one home-container">
+    <h4>Website guide</h4>
+    <div class="instructions">
+      <!-- ### angular router: prefixing / will search for path from root, if not will append to current route -->
+      <p>If you wish to learn Angular development terms go to <a class='dec-link' routerLink="/fundamentals">Fundamentals</a> page.</p>
+      <p><a class='dec-link' routerLink="/help">About</a> section will give overview about angular usage and documentation.</p>
+      <p>Simple apps developed with Angular 8 are available in <a class='dec-link' routerLink="/demo">Demo</a> page.</p>
+    </div>
   </div>
   <div class="parallax"></div>
   <div class="content-two">
-    The second container is present here
+    
   </div>
 </div>

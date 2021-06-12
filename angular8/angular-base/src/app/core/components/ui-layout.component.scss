@@ -2,6 +2,13 @@
   color: #000000;
   height: 100vh;
 
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+  }
+  
   .app-navbar {
     background-color: #e3f2fd !important;
 

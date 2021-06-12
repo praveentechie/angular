@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -7,6 +8,9 @@ import { AppComponent } from './app.component';
 import { NotFoundComponent } from './core/components/not-found.component';
 import { UILayout } from './core/components/ui-layout.component';
 import { CoreModule } from './core/core.module';
+
+import "bootstrap/dist/css/bootstrap.min.css";
+//import "bootstrap/dist/js/bootstrap.js";
 
 @NgModule({
   // ### angular - module
@@ -20,6 +24,7 @@ import { CoreModule } from './core/core.module';
   ], //The subset of declarations that should be visible and usable in the component templates of other NgModules.
   imports: [ //Other modules whose exported classes are needed by component templates declared in this NgModule.
     BrowserModule,
+    BrowserAnimationsModule,
     CoreModule,
     // AboutModule,
     // HomeModule,

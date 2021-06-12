@@ -4,9 +4,9 @@
   border: 1px solid #333333;
   display: flex;
   justify-items: center;
-  margin: 5px;
+  margin: 5px 0;
   height: 150px;
-  width: 15%;
+  width: calc(25% - 10px);
 }
 .card-container {
   display: flex;

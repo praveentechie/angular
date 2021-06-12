@@ -1,9 +1,14 @@
 import { Component, OnInit } from "@angular/core";
 import { CardDetails } from "./model/CardDetails";
 import { shuffle } from "lodash";
+import ToastService from "@apcore/components/toast/toast.service";
+import { Toast } from "@apcore/modal/Toast";
 
 @Component({
-  templateUrl: './card-game.component.html'
+  templateUrl: './card-game.component.html',
+  styleUrls: [
+    './card-game.component.scss'
+  ]
 })
 export class CardGame implements OnInit {
   cardList: Array<CardDetails>;
@@ -12,6 +17,8 @@ export class CardGame implements OnInit {
   difficultyLevel: number;
   failedAttempts: number;
 
+  constructor(private toastService: ToastService) {}
+  
   ngOnInit(): void {
     this.cardList = [];
     this.matchedCards = [];
@@ -22,6 +29,7 @@ export class CardGame implements OnInit {
   initCards(): void {
     let totalCards = this.difficultyLevel;
     this.failedAttempts = 0;
+    this.selectedCard = null;
     let uniqueNumbers = CardGame._getUniqValues(totalCards/2);
     this.cardList = uniqueNumbers.reduce((cardList, currentValue) => {
       cardList.push(new CardDetails(cardList.length, currentValue));
@@ -52,13 +60,13 @@ export class CardGame implements OnInit {
       if (CardGame._isMatch(selectedCard, matchedCard)) {
         CardGame._matchSuccessful(this.cardList, selectedCard.id, matchedCard.id);
         this.selectedCard = null;
-        alert('Yay!!! You found a successful match');
+        this.toastService.success(new Toast('Yay!!! You found a successful match', true));
       } else {
         this.failedAttempts++;
         this._getCard(selectedCard.id).visible = false;
         this._getCard(matchedCard.id).visible = false;
         this.selectedCard = null;
-        alert('Oops!!! That\'s not right. Try again');
+        this.toastService.error(new Toast('Oops!!! That\'s not right. Try again', true));
       }
     }, 500);
   }

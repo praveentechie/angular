@@ -1,45 +1,82 @@
-.parallax {
-  /* The image used */
-  background-image: url("/assets/wolverine.jpg");
+.home-page {
+  .parallax {
+    /* The image used */
+    background-image: url("/assets/angular.png");
 
-  /* Set a specific height */
-  height: 500px;
+    /* Set a specific height */
+    height: 500px;
 
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  opacity: 0.7;
-}
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.8;
+    position: relative;
 
-.content-one,
-.content-two {
-  height: 500px;
-}
+    & .details {
+      display: block;
+      font-size: 2.5rem;
+      font-weight: 100;
+      position: absolute;
+      transition: all 0.2s ease-in;
 
-// spinner 1
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
+      &:hover {
+        font-size: 3rem;
+      }
 
-.loader {
-  display: block;
-  height: 120px;
-  width: 120px;
-  border: 15px solid #f3f3f3;
-  border-top: 15px solid #3498db;
-  border-radius: 50%;
-  animation: spin 2s ease infinite;
-}
+      a {
+        color: white;
+        text-decoration: none;
+       }
 
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%
-}
+      &.concepts {
+        left: 3rem;
+        top: 3rem;
+      }
 
-.sticky + .parallax {
-  padding-top: 102px;
+      &.demo {
+        bottom: 1rem;
+        left: 30%;
+      }
+
+      &.about {
+        right: 2rem;
+        top: 7rem;
+      }
+    }
+  }
+
+  .content-one,
+  .content-two {
+    padding: 25px 5px;
+    height: 500px;
+  }
+
+  .home-container {
+    .instructions {
+      padding: 15px;
+    }
+  }
+
+  // spinner 1
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  .loader {
+    display: block;
+    display: none;
+    height: 120px;
+    width: 120px;
+    border: 15px solid #f3f3f3;
+    border-top: 15px solid #3498db;
+    border-radius: 50%;
+    animation: spin 2s ease infinite;
+  }
+
+  .sticky + .parallax {
+    padding-top: 102px;
+  }
 }

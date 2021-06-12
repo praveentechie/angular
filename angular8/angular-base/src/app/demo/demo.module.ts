@@ -4,6 +4,7 @@ import { CardElement } from "./card-game/card-element.component";
 import { CardGame } from "./card-game/card-game.component";
 import { DemoList } from "./demo-list.component";
 import { DemoRouterModule } from "./demo-routing.module";
+import ToastDemo from "./toast/toast-demo.component";
 
 @NgModule({
   imports: [
@@ -13,7 +14,8 @@ import { DemoRouterModule } from "./demo-routing.module";
   declarations: [
     DemoList,
     CardGame,
-    CardElement
+    CardElement,
+    ToastDemo
   ]
 })
 export class DemoModule {}

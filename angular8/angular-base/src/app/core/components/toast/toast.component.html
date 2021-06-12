@@ -1,0 +1,16 @@
+<div class="notification-container">
+  <div class="toast-message" [ngClass]="toast.type.toLowerCase()"
+    *ngFor="let toast of toastService.toastListObs.value" @slideIn @slideOut
+  >
+    <span>
+
+    </span>
+    <span>
+      <p class="toast-type">{{toast.type}}</p>
+      <span class="toast-description">{{toast.description}}</span>
+    </span>
+    <span class="toast-close">
+      <span (click)="closeToast(toast.id)"><b>x</b></span>
+    </span>
+  </div>
+</div>

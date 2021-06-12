@@ -1,8 +1,11 @@
 <section class="demo-list">
   <h3>Angular 8 demo</h3>
   <div class="demo-item-container">
-    <span class="demo-item-link" *ngFor="let demoItem of demoItems">
-      <a routerLink={{demoItem.path}}>{{demoItem.displayName}}</a>
+    <span class="demo-item-link" *ngFor="let demoItem of demoItems" (click)="goToPage(demoItem.path)">
+      <span class='display-name'>{{demoItem.displayName}}</span>
+      <p class="description">
+        {{demoItem.description}}
+      </p>
     </span>
   </div>
 </section>

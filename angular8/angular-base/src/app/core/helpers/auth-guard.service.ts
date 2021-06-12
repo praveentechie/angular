@@ -18,8 +18,10 @@ export class AuthGuardService implements CanLoad {
     let isAuthed = this.sessionService.isAuthenticated();
     console.log('isAuthed', isAuthed);
     if (!isAuthed) {
-      this.router.navigate(['/login']);
+      // TODO: wire up once service and DB are configured.
+      //this.router.navigate(['/login']);
     }
-    return isAuthed;
+    // return isAuthed;
+    return true;
   }
 }
