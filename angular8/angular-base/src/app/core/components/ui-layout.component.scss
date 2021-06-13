@@ -1,3 +1,5 @@
+@import '../styles/core.scss';
+
 .app-container {
   color: #000000;
   height: 100vh;
@@ -7,6 +9,10 @@
     top: 0;
     width: 100%;
     z-index: 999;
+
+    & + .content-container {
+      padding-top: 4rem;
+    }
   }
   
   .app-navbar {
@@ -19,7 +25,17 @@
   }
 
   .content-container {
+    margin-bottom: 4rem;
     min-height: calc(100vh - 70px);
     padding-top: 15px;
+  }
+
+  .page-footer {
+    background-color: $footer-background;
+
+    .footer-icon {
+      display: inline-block;
+      margin: 0 15px;
+    }
   }
 }

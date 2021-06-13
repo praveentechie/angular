@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { NoteDecorator } from './components/note.component';
 import ToastNotification from "./components/toast/toast.component";
+import Icon from "./components/icon/icon.component";
 
 @NgModule({
   imports: [
@@ -21,10 +22,12 @@ import ToastNotification from "./components/toast/toast.component";
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    Icon,
     NoteDecorator,
     ToastNotification
   ],
   declarations: [
+    Icon,
     NoteDecorator,
     ToastNotification
   ]

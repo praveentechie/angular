@@ -1,0 +1,33 @@
+<section class="tic-tac-toe">
+  <div class="row">
+    <h3 class="col-12">Tic Tac Toe</h3>
+    <div class="col-12 demo-container mt-4">
+      <div class="row">
+        <div class="col-12 col-md-7">
+          <div class="box-wrapper">
+            <span class="action-wrapper">
+              <span *ngIf="this.gameActive">It's player {{this.currentPlayer}}'s turn</span>
+              <button class="btn btn-primary reset-button ml-auto mr-2" (click)="this.initGame(true)">New game</button>
+              <button class="btn btn-warning reset-button mr-1" (click)="this.initGame()">Reset</button>
+            </span>
+            <span class="box-row mt-2">
+              <span class="box-grid" *ngFor="let grid of this.board; index as outer" (click)="(!grid && this.gameActive) && this.setPiece(outer)">
+                {{grid}}
+              </span>
+            </span>
+          </div>
+        </div>
+        <div class="col-12 col-md-5 mt-4">
+          <span class="row text-center game-stats">
+            <span class="col-4"><b>Player X</b></span>
+            <span class="col-4"><b>Tie</b></span>
+            <span class="col-4"><b>Player O</b></span>
+            <span class="col-4 mt-2">{{this.gameStats.X}} pts</span>
+            <span class="col-4 mt-2">{{this.gameStats.tie}}</span>
+            <span class="col-4 mt-2">{{this.gameStats.O}} pts</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

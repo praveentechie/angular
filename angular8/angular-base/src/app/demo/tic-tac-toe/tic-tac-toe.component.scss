@@ -1,0 +1,46 @@
+.tic-tac-toe {
+  .box-wrapper {
+    // height: 300px;
+    min-width: 300px;
+
+    .action-wrapper {
+      align-items: flex-end;
+      display: flex;
+    }
+
+    .box-row {
+      display: flex;
+      flex-wrap: wrap;
+
+      .box-grid {
+        align-items: center;
+        border-bottom: 1px solid;
+        border-left: 1px solid;
+        display: flex;
+        font-size: 2rem;
+        height: 100px;
+        justify-content: center;
+        min-width: 100px;
+        padding: 5px;
+        width: 33%;
+
+        // ### CSS selector: first 3 child elements
+        &:nth-child(-n + 3) {
+          border-top: 1px solid;
+        }
+        // ### CSS selector: multiples of 3 child elements
+        &:nth-child(3n) {
+          border-right: 1px solid;
+        }
+      }  
+    }
+  }
+
+  .game-stats {
+    white-space: nowrap;
+
+    :nth-child(-n + 3) {
+      font-size: 1.5rem;
+    }
+  }
+}
